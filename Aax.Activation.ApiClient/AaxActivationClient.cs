@@ -23,7 +23,7 @@ namespace Aax.Activation.ApiClient
         /// <returns></returns>
         public async Task<string> ResolveActivationBytes(string checksum)
         {
-            var httpResponse = await httpClient.GetAsync($"https://aaxactivationserviceapi.azurewebsites.net/api/v1/activation/{checksum}");
+            var httpResponse = await httpClient.GetAsync($"https://aax.api.j-kit.me/api/v2/activation/{checksum}");
             httpResponse.EnsureSuccessStatusCode();
             return await httpResponse.Content.ReadAsStringAsync();
         }
